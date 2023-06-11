@@ -15,8 +15,10 @@ class DriverSetting():
     def setting_driver(self) -> webdriver.Chrome:
         options = Options()
 
+        options.add_argument("--user-data-dir=~/Library/Application Support/Google/Chrome/Default")
+
         if self.is_headless:
-            options.headless = True
+            options.add_argument("--headless")
         
         driver = webdriver.Chrome(options=options)
         driver.implicitly_wait(10)
