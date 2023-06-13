@@ -30,6 +30,8 @@ class DriverSetting():
         logger.setLevel(logging.INFO)
 
         sh = logging.StreamHandler()
+        logger.addHandler(sh)
+        
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         sh.setFormatter(formatter)
 
