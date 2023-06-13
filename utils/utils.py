@@ -22,6 +22,7 @@ class DriverSetting():
         
         driver = webdriver.Chrome(options=options)
         driver.implicitly_wait(10)
+        driver.maximize_window()
 
         return driver
     
@@ -31,7 +32,7 @@ class DriverSetting():
 
         sh = logging.StreamHandler()
         logger.addHandler(sh)
-        
+
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         sh.setFormatter(formatter)
 
