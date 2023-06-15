@@ -9,10 +9,17 @@ class GMOCoinAPI():
         self_api_key = os.environ["GMO_COIN_API_KEY"]
         self_secret_key = os.environ["GMO_COIN_SECREET_KEY"]
     
-    def get_latest_rate():
-        response = requests.get(PUBLIC_API_ENDPOINT+'/vi/ticker')
+    def get_latest_rate(symbol: str | None) ->dict:
+        endpoint = PUBLIC_API_ENDPOINT+'/vi/ticker'
+        if symbol:
+            endpoint += f'?symbol={symbol}'
+
+        response = requests.get(endpoint)
+
         if response["status"] != 0:
             return f"Error: {response}"
+        
+        return response
 
         
         
