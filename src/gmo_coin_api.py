@@ -65,11 +65,13 @@ class GMOCoinAPI():
         
         return response
     
-    def buy_order(self, symbol: str, exec_type: str, price: str | None, size: str):
-        self._order(symbol=symbol, side='BUY', exec_type=exec_type, price=price, size=size)
+    def buy_order(self, symbol: str, exec_type: str, price: str | None, size: str) -> Response:
+        response: Response = self._order(symbol=symbol, side='BUY', exec_type=exec_type, price=price, size=size)
+        return response
     
-    def sell_order(self, symbol: str, exec_type: str, price: str | None, size: str):
-        self._order(symbol=symbol, side='SELL', exec_type=exec_type, price=price, size=size)
+    def sell_order(self, symbol: str, exec_type: str, price: str | None, size: str) -> Response:
+        response: Response = self._order(symbol=symbol, side='SELL', exec_type=exec_type, price=price, size=size)
+        return response
 
 
 
