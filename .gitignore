@@ -4,6 +4,8 @@
 !/src/*.py
 !/utils/
 !/utils/*.py
+!/test/
+!/test/*.py
 
 !.gitignore
 !README.md
